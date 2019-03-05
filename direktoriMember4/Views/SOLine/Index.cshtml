@@ -1,0 +1,66 @@
+﻿@model IEnumerable<direktoriMember4.Models.SOLine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table id="table_id" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SOHeader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Keterangan)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SOHeader.SOHeaderID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produk.ProdukID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Keterangan)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SOLineID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SOLineID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SOLineID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+
+    <script>
+
+
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+
+    });
+    </script>
+}
