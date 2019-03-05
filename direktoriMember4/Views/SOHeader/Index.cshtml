@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-@*<table id="table_id" class="table">
+<table id="table_id" class="table">
     <thead>
         <tr>
             <th>
@@ -45,7 +45,7 @@
             </tr>
         }
     </tbody>
-</table>*@
+</table>
 
 
 <div class="container">
@@ -74,6 +74,9 @@
 @section Scripts{
 
     <script>
+        $('#Delete').click(function () {
+            location.reload();
+        });
 
         var dataTable;
 
