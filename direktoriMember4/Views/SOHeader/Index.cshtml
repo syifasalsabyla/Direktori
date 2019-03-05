@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table id="table_id" class="table">
+@*<table id="table_id" class="table">
     <thead>
         <tr>
             <th>
@@ -45,7 +45,7 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
 
 
 <div class="container">
@@ -154,6 +154,7 @@
                                         icon: "success",
                                     });
                                     dataTable.ajax.reload();
+                                    
                                 }
                             }
                         });
@@ -161,6 +162,7 @@
                     } else {
                         swal("Your imaginary file is safe!");
                     }
+                    location.reload();
                 });
             //swal({
             //    title: "Are you sure want to Delete?",
@@ -174,7 +176,7 @@
                 
             //});
 
-
+          
         }
 
         function ShowMessage(msg) {
